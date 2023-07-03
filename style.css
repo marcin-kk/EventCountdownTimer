@@ -14,42 +14,84 @@ body {
 }
 
 .counter-app {
-    position: relative;
+	position: relative;
 }
 
 .app-body {
-    display: flex;
-    flex-direction: column;
-    width: 800px;
-    height: 800px;
-    border-radius: 15px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
-    overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	width: 800px;
+	height: 800px;
+	border-radius: 15px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+	overflow: hidden;
 }
 
 .image-section {
-    position: relative;
-    height: 400px;
-    background-image: url('default.jpg.jpg');
-    background-size: cover;
-    background-position: bottom;
+	position: relative;
+	height: 400px;
+	background-image: url("default.jpg.jpg");
+	background-size: cover;
+	background-position: bottom;
 }
 
 .settings-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    padding: 20px 30px;
-    font-size: 32px;
-    color: #5B2514;
-    background-color: #F9ECEC;
-    border: 1px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color .3s, color .3s;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	padding: 20px 30px;
+	font-size: 32px;
+	color: #5b2514;
+	background-color: #f9ecec;
+	border: 1px solid black;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
 }
 
 .settings-btn:hover {
-background-color: #5B2514;
-color: #F9ECEC;
+	background-color: #5b2514;
+	color: #f9ecec;
+}
+
+.time-section {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 400px;
+	background-color: #fff;
+	z-index: 100;
+}
+
+h3 {
+	font-size: 24px;
+	text-align: center;
+}
+
+.time-cards {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	padding: 40px 0;
+	width: 18%;
+	border: 1px solid black;
+	border-radius: 8px;
+}
+
+.number {
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.card-title {
+    text-align: center;
 }
