@@ -10,7 +10,7 @@ body {
 	align-items: center;
 	min-height: 100vh;
 	font-family: "Montserrat", sans-serif;
-	background-color: rgb(233, 233, 233);
+	background-color: #f9ecec;
 }
 
 .counter-app {
@@ -94,4 +94,50 @@ h3 {
 
 .card-title {
     text-align: center;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 50px 30px;
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 8px;
+    opacity:0;
+    transition: transform .5s, opacity .3s;
+}
+
+.active {
+    transform: translateX(430px);
+    opacity: 1;
+}
+
+h1 {
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input {
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.date {
+    text-align: center;
+}
+
+.save {
+    padding: 10px 20px;
+    cursor: pointer;
 }
