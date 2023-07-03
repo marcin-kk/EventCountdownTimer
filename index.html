@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Countdown Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f796d1b738.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="counter-app">
+        <div class="settings active">
+            <h1>Settings</h1>
+            <label for="event-name">Event name</label>
+            <input type="text" id="event-name" value="My bestie's birthday">
+            <table class="date">
+                <tr>
+                    <td><label for="event-day">Day:</label></td>
+                    <td><label for="event-month">Month:</label></td>
+                    <td><label for="event-year">Year:</label></td>
+                </tr>
+                <tr>
+                    <td><input type="number" id="event-day" maxlength="2" value="8"></td>
+                    <td><input type="number" id="event-month" maxlength="2" value="03"></td>
+                    <td><input type="number" id="event-year" maxlength="4" value="2024"></td>
+                </tr>
+            </table>
+            <label for="event-image">Picture link:</label>
+            <input type="text" id="event-image" value="default.img">
+            <button class="save">Save</button>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
