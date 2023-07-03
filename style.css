@@ -1,5 +1,55 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: "Montserrat", sans-serif;
+	background-color: rgb(233, 233, 233);
+}
+
+.counter-app {
+    position: relative;
+}
+
+.app-body {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 800px;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+}
+
+.image-section {
+    position: relative;
+    height: 400px;
+    background-image: url('default.jpg.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+
+.settings-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 20px 30px;
+    font-size: 32px;
+    color: #5B2514;
+    background-color: #F9ECEC;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .3s, color .3s;
+}
+
+.settings-btn:hover {
+background-color: #5B2514;
+color: #F9ECEC;
 }
