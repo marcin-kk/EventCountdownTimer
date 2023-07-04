@@ -12,6 +12,11 @@ const yearInput = document.querySelector("#event-year")
 const monthInput = document.querySelector("#event-month")
 const dayInput = document.querySelector("#event-day")
 
+const daysDisplay = document.querySelector(".days-count")
+const hoursDisplay = document.querySelector(".hours-count")
+const minutesDisplay = document.querySelector(".minutes-count")
+const secondsDisplay = document.querySelector(".seconds-count")
+
 const changeImg = () => {
 	if (imgLinkInput.value === "") {
 		imgSection.style.backgroundImage = "url('default.jpg')"
@@ -29,24 +34,34 @@ const showPanel = () => {
 	settingsPanel.classList.toggle("active")
 }
 
-// const curDate = new Date()
-// console.log(curDate)
-// const givDate = new Date(2023, 6, 3)
-// console.log(givDate)
-// console.log((curDate - givDate) / 1000 / 60 / 60 / 24)
-
-
-
 const calculateDate = () => {
 	const year = yearInput.value
 	const month = monthInput.value
 	const day = dayInput.value
 
-    const currentDate = new Date()
-    console.log(currentDate);
+	const currentDate = new Date()
+	console.log(currentDate)
 
-    const givenDate = new Date(`${year},${month},${day}`)
-    console.log(givenDate);
+	const givenDate = new Date(`${year},${month},${day}`)
+	console.log(givenDate)
+
+	const dateDifference = givenDate - currentDate
+	console.log(dateDifference)
+
+	const seconds = Math.floor(dateDifference / 1000) % 60
+	const minutes = Math.floor(dateDifference / 1000 / 60) % 60
+	const hours = Math.floor(dateDifference / 1000 / 60 / 60) % 24
+	const days = Math.floor(dateDifference / 1000 / 60 / 60 / 24)
+
+	console.log(seconds)
+	console.log(minutes)
+	console.log(hours)
+	console.log(days)
+
+	daysDisplay.textContent = days
+	hoursDisplay.textContent = hours
+	minutesDisplay.textContent = minutes
+	secondsDisplay.textContent = seconds
 }
 
 settingsBtn.addEventListener("click", showPanel)
