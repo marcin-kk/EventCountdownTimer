@@ -53,17 +53,33 @@ const calculateDate = () => {
 	const hours = Math.floor(dateDifference / 1000 / 60 / 60) % 24
 	const days = Math.floor(dateDifference / 1000 / 60 / 60 / 24)
 
-	console.log(seconds)
-	console.log(minutes)
-	console.log(hours)
-	console.log(days)
-
 	daysDisplay.textContent = days
 	hoursDisplay.textContent = hours
 	minutesDisplay.textContent = minutes
 	secondsDisplay.textContent = seconds
 }
 
+const setTomorrowDate = () => {
+	const date = new Date()
+	// from MDN:
+	const [month, day, year] = [
+		date.getMonth(),
+		date.getDate(),
+		date.getFullYear(),
+	]
+
+	console.log(month, day, year)
+
+	yearInput.value = year
+	monthInput.value = month + 1
+	dayInput.value = day + 1
+}
+
+setTomorrowDate()
+showEventName()
+calculateDate()
+
+setInterval(calculateDate, 1000)
 settingsBtn.addEventListener("click", showPanel)
 saveBtn.addEventListener("click", showEventName)
 saveBtn.addEventListener("click", changeImg)
