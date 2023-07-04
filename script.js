@@ -13,6 +13,29 @@ const hoursDisplay = document.querySelector(".hours-count")
 const minutesDisplay = document.querySelector(".minutes-count")
 const secondsDisplay = document.querySelector(".seconds-count")
 
+let day
+let month
+let year
+
+const SettingsSetTomorrowDate = () => {
+	const date = new Date()
+	// from MDN:
+	const [month, day, year] = [
+		date.getMonth(),
+		date.getDate(),
+		date.getFullYear(),
+	]
+	yearInput.value = year
+	monthInput.value = month + 1
+	dayInput.value = day + 1
+}
+
+SettingsSetTomorrowDate()
+
+day = dayInput.value
+month = monthInput.value
+year = yearInput.value
+
 const changeImg = () => {
 	if (imgLinkInput.value === "") {
 		imgSection.style.backgroundImage = "url('default.jpg')"
@@ -31,11 +54,8 @@ const showPanel = () => {
 }
 
 const calculateDate = () => {
-	const year = yearInput.value
-	const month = monthInput.value
-	const day = dayInput.value
-
 	const currentDate = new Date()
+
 	const givenDate = new Date(`${year},${month},${day}`)
 	const dateDifference = givenDate - currentDate
 
@@ -50,30 +70,17 @@ const calculateDate = () => {
 	secondsDisplay.textContent = seconds
 }
 
-const setTomorrowDate = () => {
-	const date = new Date()
-	// from MDN:
-	const [month, day, year] = [
-		date.getMonth(),
-		date.getDate(),
-		date.getFullYear(),
-	]
-
-	yearInput.value = year
-	monthInput.value = month + 1
-	dayInput.value = day + 1
+const takeInputs = () => {
+	day = dayInput.value
+	month = monthInput.value
+	year = yearInput.value
 }
 
-const countDown = () => {
-	setInterval(calculateDate, 1000)
-}
-
-const inputNumbers = () => {}
-setTomorrowDate()
-calculateDate()
 showEventName()
 
+setInterval(calculateDate, 1000)
 settingsBtn.addEventListener("click", showPanel)
 saveBtn.addEventListener("click", showEventName)
 saveBtn.addEventListener("click", changeImg)
-saveBtn.addEventListener("click", countDown)
+saveBtn.addEventListener("click", takeInputs)
+saveBtn.addEventListener("click", calculateDate)
