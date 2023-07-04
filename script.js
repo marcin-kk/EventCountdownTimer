@@ -55,10 +55,8 @@ const showPanel = () => {
 
 const calculateDate = () => {
 	const currentDate = new Date()
-
 	const givenDate = new Date(`${year},${month},${day}`)
 	const dateDifference = givenDate - currentDate
-
 	const seconds = Math.floor(dateDifference / 1000) % 60
 	const minutes = Math.floor(dateDifference / 1000 / 60) % 60
 	const hours = Math.floor(dateDifference / 1000 / 60 / 60) % 24
