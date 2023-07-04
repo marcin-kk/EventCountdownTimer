@@ -68,7 +68,7 @@ const calculateDate = () => {
 	secondsDisplay.textContent = seconds
 }
 
-const takeInputs = () => {
+const updateInputVariables = () => {
 	day = dayInput.value
 	month = monthInput.value
 	year = yearInput.value
@@ -80,5 +80,5 @@ setInterval(calculateDate, 1000)
 settingsBtn.addEventListener("click", showPanel)
 saveBtn.addEventListener("click", showEventName)
 saveBtn.addEventListener("click", changeImg)
-saveBtn.addEventListener("click", takeInputs)
+saveBtn.addEventListener("click", updateInputVariables)
 saveBtn.addEventListener("click", calculateDate)
